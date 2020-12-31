@@ -28,6 +28,9 @@ client.connect(err => {
         const SubastasData = client
         .db("subastas")
         .collection("SubProducts");
+
+    const TiendaCartProducts = client.db("Tienda").collection("Cart");
+
     // seller products upload start
 
     app.post('/tienda/postProducts', (req, res) => {
@@ -79,6 +82,17 @@ client.connect(err => {
                 res.send(documents[0]);
             })
     })
+
+    app.post('/cartforTienda', (req, res) => {
+
+        const bodyZCart = req.body;
+        TiendaCartProducts.insertOne(bodyZCart)
+        .then(result => {
+            res.send(result.insertedCount > 0)
+        })
+        
+    })
+
 
     // seller Products upload finish
 
