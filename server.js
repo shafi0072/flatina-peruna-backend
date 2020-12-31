@@ -99,7 +99,7 @@ client.connect(err => {
     app.post('/login/buyer', (req, res) => {
         const bodyLog = req.body
         console.log(bodyLog);
-        BuyerInfo.findOne(bodyLog)
+        BuyerInfo.find(bodyLog)
         .toArray((err, document) => {
             if(document){
                res.send(document);
@@ -113,7 +113,7 @@ client.connect(err => {
     
 
 
-    // signup for Buyer area start <--
+    // signup for Buyer area finished <--
 
 
 
