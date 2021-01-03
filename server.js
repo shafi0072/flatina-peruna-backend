@@ -169,6 +169,19 @@ client.connect(err => {
         
 
     })
+    app.get('/subastasProducts', (req, res) => {
+        SubastasData.find({})
+        .toArray((err, documents) => {
+            if(documents){
+                res.send(documents)
+                console.log('its working', documents);
+            }
+            else{
+                res.send(err, 'its error');
+                console.log('its error');
+            }
+        })
+    })
 
     // subastas stam Upload finish
 
