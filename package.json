@@ -8,7 +8,7 @@
     "start": "nodemon server.js"
   },
   "engines":{
-    "node":"15.5.0"
+    "node":"12.x"
   },
   "author": "shafi",
   "license": "ISC",
