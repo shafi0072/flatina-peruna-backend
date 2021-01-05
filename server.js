@@ -13,7 +13,7 @@ app.use(express.static('images'))
 app.use(fileUpload());
 const client = new MongoClient(uri, { useUnifiedTopology: true}, { useNewUrlParser: true }, { connectTimeoutMS: 30000 }, { keepAlive: 1});
 
-app.get('/', (req, res) => {
+app.get('/api/get', (req, res) => {
     res.send('hello')
 })
 
