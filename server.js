@@ -13,9 +13,6 @@ app.use(express.static('images'))
 app.use(fileUpload());
 const client = new MongoClient(uri, { useUnifiedTopology: true}, { useNewUrlParser: true }, { connectTimeoutMS: 30000 }, { keepAlive: 1});
 
-app.get('/api/get', (req, res) => {
-    res.send('hello')
-})
 
 
 function between() {  
@@ -87,7 +84,6 @@ client.connect(err => {
     })
 
     app.post('/cartforTienda', (req, res) => {
-
         const bodyZCart = req.body;
         TiendaCartProducts.insertOne(bodyZCart)
         .then(result => {
