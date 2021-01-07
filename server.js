@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
-const port = 5000;
+
 const uri = `mongodb+srv://shafi:safi83351@cluster0.gmrnf.mongodb.net/Tienda?retryWrites=true&w=majority`;
 app.use(bodyParser.json());
 app.use(cors());
@@ -186,6 +186,8 @@ client.connect(err => {
     // subastas stam Upload finish
 
 })
+
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
     console.log('This is server port')
