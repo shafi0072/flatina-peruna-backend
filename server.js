@@ -85,10 +85,11 @@ client.connect(err => {
 
     app.post('/cartforTienda', (req, res) => {
         const bodyZCart = req.body;
+        console.log(bodyZCart);
         TiendaCartProducts.insertOne(bodyZCart)
-        .then(result => {
-            res.send(result.insertedCount > 0)
-        })
+        // .then(result => {
+        //     res.send(result.insertedCount > 0)
+        // })
         
     })
 
