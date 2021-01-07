@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors')
 const MongoClient = require('mongodb').MongoClient;
-
+require('dotenv').config();
 const port = 5000;
 const uri = `mongodb+srv://shafi:safi83351@cluster0.gmrnf.mongodb.net/Tienda?retryWrites=true&w=majority`;
 app.use(bodyParser.json());
